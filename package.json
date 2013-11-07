@@ -1,0 +1,19 @@
+{
+  "name": "icdocsoc-email-generator",
+  "version": "0.0.1",
+  "author": "Pete Hamilton <peterejhamilton@gmail.com>",
+  "description": "IC DoCSoc Emails Generator",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "",
+    "jade": "",
+    "juice": "",
+    "meta-marked": "",
+    "stylus": "",
+    "jsdom": "",
+    "underscore": "1.4.x"
+  },
+  "engine": {
+    "node": ">=0.6"
+  }
+}
