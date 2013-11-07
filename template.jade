@@ -3,12 +3,9 @@ html(lang='en')
   head
     meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
   body.site
-    table.wrap
-    table.head-wrap
-    table.body-wrap
-    table.footer-wrap
-    .container.main(role='main')
-      .header
+    p &nbsp;
+    .container
+      .content
         h1.title= page.title
         if page.date
           p.date= page.date
@@ -16,15 +13,19 @@ html(lang='en')
           a(href="http://bit.ly/icdocsoc_fb") Join us on Facebook
           | &nbsp;&nbsp;|&nbsp;&nbsp;
           a(href="http://bit.ly/icdocsoc_twitter") Follow us on Twitter
-      hr
-      if page.agenda
-        section.agenda
-          ol
-            for item in page.agenda
-              li= item
-      hr
-      section.content!= content
-      hr
-      .sponsored-by
-        p Sponsored By
-        img(src="http://docsoc.s3.amazonaws.com/sponsored_by.png")
+        hr
+        if page.agenda
+          section.agenda
+            ol
+              for item in page.agenda
+                li= item
+      .main(role='main')
+        section.content
+          hr
+          != content
+      .content
+        hr
+        .sponsored-by
+          p Sponsored By
+          img(src="http://docsoc.s3.amazonaws.com/sponsored_by.png")
+    p &nbsp;
