@@ -9,19 +9,20 @@ html(lang='en')
         h1.title= page.title
         if page.date
           p.date= page.date
-        .head-links
-          a(href="http://bit.ly/icdocsoc_fb") Join us on Facebook
-          | &nbsp;&nbsp;|&nbsp;&nbsp;
-          a(href="http://bit.ly/icdocsoc_twitter") Follow us on Twitter
+        if page.show_social
+          .head-links
+            a(href="http://bit.ly/icdocsoc_fb") Join us on Facebook
+            | &nbsp;&nbsp;|&nbsp;&nbsp;
+            a(href="http://bit.ly/icdocsoc_twitter") Follow us on Twitter
         hr
         if page.agenda
           section.agenda
             ol
               for item in page.agenda
                 li= item
+
       .main(role='main')
         section.content
-          hr
           != content
       .content
         hr
