@@ -62,7 +62,7 @@ fs.readdir "./emails/", (err, files) ->
   console.log "Rendering Emails"
   files.forEach (file) ->
     return if file[0] is "." # Ignore .DS_Store
-    console.log "  - " + file
+    console.log "  - " + file + " -> compiled/" + file.replace(".md", ".html")
     renderFile "emails/" + file, (html) ->
       outputHTML "compiled/" + file.replace("md", "html"), html, ->
 
