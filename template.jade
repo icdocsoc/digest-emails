@@ -7,13 +7,15 @@ html(lang='en')
     .container
       .content
         h1.title= page.title
+        if page.subtitle
+          h2.title= page.subtitle
         if page.date
           p.date= page.date
         if page.show_social
           .head-links
-            a(href="http://bit.ly/icdocsoc_fb") Join us on Facebook
+            a(href="http://bit.ly/icdocsoc_fb") Join DoCSoc on Facebook
             | &nbsp;&nbsp;|&nbsp;&nbsp;
-            a(href="http://bit.ly/icdocsoc_twitter") Follow us on Twitter
+            a(href="http://bit.ly/icdocsoc_twitter") Follow @ICDoCSoc on Twitter
         hr
         if page.agenda
           section.agenda
