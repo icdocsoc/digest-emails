@@ -26,9 +26,10 @@ html(lang='en')
       .main(role='main')
         section.content
           != content
-      .content
-        hr
-        .sponsored-by
-          p DoCSoc is Sponsored By
-          img(src="http://docsoc.s3.amazonaws.com/sponsored_by.png")
+      if page.show_sponsorship
+        .content
+          hr
+          .sponsored-by
+            p DoCSoc is Sponsored By
+            img(src="http://docsoc.s3.amazonaws.com/sponsored_by.png")
     p &nbsp;
