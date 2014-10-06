@@ -1,4 +1,4 @@
-!!! 5
+doctype html
 html(lang='en')
   head
     meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
@@ -17,7 +17,7 @@ html(lang='en')
             | &nbsp;&nbsp;|&nbsp;&nbsp;
             a(href="http://bit.ly/icdocsoc_twitter") Follow @ICDoCSoc on Twitter
         hr
-        if page.agenda
+        if page.show_agenda
           section.agenda
             ol
               for item in page.agenda

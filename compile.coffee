@@ -34,11 +34,12 @@ getHTML = (file, callback) ->
       done: (errors, window) ->
         data.meta.agenda = []
         $ = window.$
+        
         $("h1").each ->
           data.meta.agenda.push $(this).text()
 
-        data.meta.show_social = (data.meta.show_social isnt "false")
-        data.meta.show_sponsorship = (data.meta.show_sponsorship isnt "false")
+        data.meta.show_social = (data.meta.show_social isnt false)
+        data.meta.show_sponsorship = (data.meta.show_sponsorship isnt false)
         if data.meta.date and data.meta.date isnt ""
           data.meta.date = moment(data.meta.date).format("MMMM Do YYYY")
 

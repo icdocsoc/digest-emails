@@ -11,7 +11,8 @@
     "meta-marked": "",
     "stylus": "",
     "jsdom": "",
-    "underscore": "1.4.x"
+    "underscore": "1.4.x",
+    "coffee": ""
   },
   "engine": {
     "node": ">=0.6"
