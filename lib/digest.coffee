@@ -1,7 +1,12 @@
 Q = require('q')
 _ = require('underscore')
 
-marked = require('meta-marked')
+# Wrap marked to preserve the markdown source
+marked = (src) ->
+  data = require('meta-marked')(src)
+  data.src = src
+  data
+
 juice = require('juice')
 stylus = require('stylus')
 
@@ -16,15 +21,14 @@ class Digest
     Q.all [ @getHTML(mdFile), @getCSS(stylTemplate) ]
       .spread (html, css) ->
         # Use juice to inline all CSS into the html
-        juice.inlineContent(html, css)
+        _.extend juice.inlineContent(html, css), _src: html._src
 
   @getHTML: (mdFile) ->
     FS.readFile(mdFile, 'utf8')
       .then marked # Markdown -> HTML
-      .then ({ html, meta }) ->
+      .then ({ html, meta, src }) ->
         # Construct a new digest email with default jade template
-        new Email(Config.jadeTemplate, { html, meta })
-          .renderHTML()
+        new Email(Config.jadeTemplate, { html, meta, src }).renderHTML()
 
   @getCSS: (stylFile) ->
     FS.readFile(stylFile, 'utf8')

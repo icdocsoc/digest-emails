@@ -13,7 +13,10 @@
     "jsdom": "",
     "underscore": "1.4.x",
     "coffee": "",
-    "q": "^1.0.1"
+    "q": "^1.0.1",
+    "commander": "^2.3.0",
+    "prompt": "^0.2.14",
+    "winston": "^0.8.1"
   },
   "engine": {
     "node": ">=0.6"

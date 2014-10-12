@@ -9,7 +9,7 @@ Config = require('../../config')
 
 class Email
 
-  constructor: (@jadeTemplate = Config.jadeTemplate, { @html, meta }) ->
+  constructor: (@jadeTemplate = Config.jadeTemplate, { @html, @src, meta }) ->
     @initMeta(meta)
 
   # Causes the html to be rendered. Returns a promise that is resolved with
@@ -18,6 +18,7 @@ class Email
     @createEnv()
       .then @loadAgenda.bind(@)
       .then @compileWithMeta.bind(@)
+      .then @attachSrc.bind(@)
 
   # Sets default page meta-data.
   initMeta: (pageMeta) ->
@@ -49,11 +50,15 @@ class Email
   # Uses jade to compile the initial html content, injecting the parsed meta
   # data as locals.
   compileWithMeta: (window) ->
-    console.error @meta
     html = jade.renderFile @jadeTemplate, {
       page: @meta
       content: @html
     }
+
+  # Attaches the markdown source as a private property on the html string.
+  # Allows use down the line.
+  attachSrc: (html) ->
+    _.extend html, _src: @src
 
 module.exports = { Email }
 
