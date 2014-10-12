@@ -12,7 +12,8 @@
     "stylus": "",
     "jsdom": "",
     "underscore": "1.4.x",
-    "coffee": ""
+    "coffee": "",
+    "q": "^1.0.1"
   },
   "engine": {
     "node": ">=0.6"

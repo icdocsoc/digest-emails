@@ -11,13 +11,13 @@ html(lang='en')
           h2.title= page.subtitle
         if page.date
           p.date= page.date
-        if page.show_social
+        if page.showSocial
           .head-links
             a(href="http://bit.ly/icdocsoc_fb") Join DoCSoc on Facebook
             | &nbsp;&nbsp;|&nbsp;&nbsp;
             a(href="http://bit.ly/icdocsoc_twitter") Follow @ICDoCSoc on Twitter
         hr
-        if page.show_agenda
+        if page.showAgenda
           section.agenda
             ol
               for item in page.agenda
@@ -26,7 +26,7 @@ html(lang='en')
       .main(role='main')
         section.content
           != content
-      if page.show_sponsorship
+      if page.showSponsorship
         .content
           hr
           .sponsored-by

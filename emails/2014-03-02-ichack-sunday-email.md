@@ -1,8 +1,8 @@
 ---
 title: ICHACK 2014
 subtitle: IMPORTANT DETAILS BELOW
-show_social: false
-show_sponsorship: false
+showSocial: false
+showSponsorship: false
 ...
 
 ---

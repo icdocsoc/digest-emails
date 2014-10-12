@@ -1,8 +1,8 @@
 ---
 title: ICHACK 2014
 subtitle: THE BIG ONE
-show_social: false
-show_sponsorship: false
+showSocial: false
+showSponsorship: false
 agenda: false
 ...
 
