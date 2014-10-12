@@ -16,20 +16,16 @@ Write emails in the `emails` folder
 
 - `h1` tags are listed at the top as an agenda-style list, unless there aren't any.
 
-# Generating Emails
-
-`coffee compile`
-
-Output will be placed in `compiled` folder
-
 # Sending Emails
 
-- Open the HTML file in a browser (I used chrome)
-- Drag-Select from above the box, to the bottom fo the page
-- Copy
-- Open a new email in exchange
-- Paste (it should center when you resize the window, if not, you copy/pasted wrong)
+- First write your email in the ./emails folder
+- Once written, execute `./lib/cli.coffee --send ./emails/selected-email.md`
+- Enter the required details for email addressee
 - Send!
+
+If you encounter any errors in this process, then most likely you are missing the `DOCSOC_MAIL_PASSWORD` environment variable.
+This is used to communicate with the SMTP server, and should be set for a successful send.
+Either add this to (a non source controller) dotfile, or prefix the send command with `DOCSOC_MAIL_PASSWORD=<pass> ./lib/cli...`.
 
 # Contributing
 
