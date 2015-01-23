@@ -5,7 +5,6 @@ marked = require("meta-marked")
 fs = require("fs")
 juice = require("juice")
 stylus = require("stylus")
-_ = require("underscore")
 jsdom = require("jsdom")
 moment = require("moment")
 
