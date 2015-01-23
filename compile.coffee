@@ -30,13 +30,10 @@ getHTML = (file, callback) ->
     # Extract H1 contents to create agenda, add to meta
     jsdom.env
       html: data.html
-      scripts: ["http://code.jquery.com/jquery.js"]
       done: (errors, window) ->
         data.meta.agenda = []
-        $ = window.$
-        
-        $("h1").each ->
-          data.meta.agenda.push $(this).text()
+        for h in window.document.querySelectorAll("h1")
+          data.meta.agenda.push h.textContent
 
         data.meta.show_social = (data.meta.show_social isnt false)
         data.meta.show_sponsorship = (data.meta.show_sponsorship isnt false)
