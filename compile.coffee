@@ -60,7 +60,12 @@ fs.readdir "./emails/", (err, files) ->
   console.log "Rendering Emails"
   files.forEach (file) ->
     return if file[0] is "." # Ignore .DS_Store
-    console.log "  - " + file + " -> compiled/" + file.replace(".md", ".html")
-    renderFile "emails/" + file, (html) ->
-      outputHTML "compiled/" + file.replace("md", "html"), html, ->
-
+    inPath = "emails/" + file
+    outPath = "compiled/" + file.replace("md", "html")
+    fs.stat inPath, (inErr, inStats) ->
+      throw inErr if inErr
+      fs.stat outPath, (outErr, outStats) ->
+        if outErr or inStats.mtime.getTime() > outStats.ctime.getTime()
+          console.log "  - " + file + " -> " + outPath
+          renderFile inPath, (html) ->
+            outputHTML outPath, html, ->
