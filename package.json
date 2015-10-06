@@ -10,7 +10,7 @@
     "juice": "",
     "meta-marked": "",
     "stylus": "",
-    "jsdom": "",
+    "jsdom": "3.1.2",
     "coffee": ""
   },
   "engine": {
