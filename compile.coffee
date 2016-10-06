@@ -65,7 +65,7 @@ fs.readdir "./emails/", (err, files) ->
     fs.stat inPath, (inErr, inStats) ->
       throw inErr if inErr
       fs.stat outPath, (outErr, outStats) ->
-        if outErr or inStats.mtime.getTime() > outStats.ctime.getTime()
+        #if outErr or inStats.mtime.getTime() > outStats.ctime.getTime()
           console.log "  - " + file + " -> " + outPath
           renderFile inPath, (html) ->
             outputHTML outPath, html, ->
