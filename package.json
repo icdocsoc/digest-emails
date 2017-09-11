@@ -5,13 +5,14 @@
   "description": "IC DoCSoc Emails Generator",
   "license": "MIT",
   "dependencies": {
-    "moment": "",
+    "coffee": "",
+    "contextify": "^0.1.15",
     "jade": "",
+    "jsdom": "~11.1.0",
     "juice": "",
     "meta-marked": "",
-    "stylus": "",
-    "jsdom": "",
-    "coffee": ""
+    "moment": "",
+    "stylus": ""
   },
   "engine": {
     "node": ">=0.6"

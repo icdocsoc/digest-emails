@@ -5,7 +5,7 @@ marked = require("meta-marked")
 fs = require("fs")
 juice = require("juice")
 stylus = require("stylus")
-jsdom = require("jsdom")
+jsdom = require("jsdom/lib/old-api")
 moment = require("moment")
 
 # Other Variables
